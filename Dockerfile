@@ -1,12 +1,10 @@
- stable/Dockerfile
-#
 # Build a Podman container image from the latest
 # stable version of Podman on the Fedoras Updates System.
 # https://bodhi.fedoraproject.org/updates/?search=podman
 # This image can be used to create a secured container
 # that runs safely with privileges within the container.
 #
-FROM rocky:8
+FROM docker.io/rockylinux:8.6
 
 # Don't include container-selinux and remove
 # directories used by yum that are just taking
