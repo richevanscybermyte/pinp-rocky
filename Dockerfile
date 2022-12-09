@@ -10,6 +10,7 @@ FROM docker.io/rockylinux:8.6
 # directories used by yum that are just taking
 # up space.
 RUN dnf -y update; yum -y reinstall shadow-utils; \
+dnf -y install crun; \
 yum -y install podman fuse-overlayfs --exclude container-selinux; \
 rm -rf /var/cache /var/log/dnf* /var/log/yum.*
 
