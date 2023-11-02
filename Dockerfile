@@ -4,7 +4,7 @@
 # This image can be used to create a secured container
 # that runs safely with privileges within the container.
 #
-FROM docker.io/rockylinux:8.6
+FROM docker.io/rockylinux:8.8
 
 # Don't include container-selinux and remove
 # directories used by yum that are just taking
