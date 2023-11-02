@@ -9,9 +9,11 @@ FROM docker.io/rockylinux:8.8
 # Don't include container-selinux and remove
 # directories used by yum that are just taking
 # up space.
+# rich edit: add podman-plugins to allow in-pod dns
 RUN dnf -y update; yum -y reinstall shadow-utils; \
 dnf -y install crun; \
 yum -y install podman fuse-overlayfs --exclude container-selinux; \
+dnf install podman-plugins -y \
 rm -rf /var/cache /var/log/dnf* /var/log/yum.*
 
 RUN useradd podman; \
